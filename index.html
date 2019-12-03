@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700,900&amp;display=swap" rel="stylesheet">
+	<style>
+		
+		body,h1,h2,h3,p,li,ul,div,section,input {margin:0; padding:0;}
+		html{font-family: 'Noto Sans KR', sans-serif;}
+		section{height:100vh; position: relative;}
+		section h2{width:70%; font-size: 30px; font-weight: 700;position: absolute;
+					left:15%;top:40vh;text-align: center; color:white;}
+		section .box{ position: absolute; top:60vh; width:100%; text-align: center; font-size: 24px; font-weight: 900; }
+		section .box label{ vertical-align: middle; }
+		section .box input[type="radio"]{width:20px; height:20px;}
+		.s1{background: gray;}
+		.s2{background: gray;}
+		.s3{background: gray;}
+		.s4{background: gray;}
+		.s5{height: 5vh;}
+		#but{position: absolute; left:35%; top:0vh; width:30%; text-align: center; font-size: 24px; font-weight: 900; background: gray}
+		#monitor{position: absolute; left:35%; top:0vh; width:30%; text-align: center; font-size: 24px; font-weight: 900; background: gray}
+
+	
+	</style>
+</head>
+<body>
+	<section class="s1">
+	<h2 id="h1">
+		내가 선호하는 포지션은?
+	</h2>
+	<div class="box">
+		<label>
+			<input type="radio" name="q1" value="a" class="radio1">
+			공격수
+			<input type="radio" name="q1" value="b" class="radio1">
+			미드필더
+			<input type="radio" name="q1" value="c" class="radio1">
+			수비수/골키퍼
+		</label>
+	</div>
+    </section>
+    <section class="s2">
+    	<h2 id="h2">
+    		나의 발볼 사이즈는?
+    	</h2>
+    	<div class="box">
+    		<input type="radio" name="q2" value="d" class="radio2">
+    		넓은 편
+    		<input type="radio" name="q2" value="e" class="radio2">
+    		좁은 편
+    		<input type="radio" name="q2" value="f" class="radio2">
+    		상관없음
+    	</div>
+    </section>
+    <section class="s3">
+    	<h2 id="h3">
+    		축구화 선호 무게는?
+    	</h2>
+    	<div class="box">
+    		<input type="radio" name="q3" value="g" class="radio3">
+    		가벼움
+    		<input type="radio" name="q3" value="h" class="radio3">
+    		무거움
+    		<input type="radio" name="q3" value="i" class="radio3">
+    		상관없음
+    	</div>
+    </section>
+    <section class="s4">
+    	<h2 id="h4">
+    		원하는 색상은?
+    	</h2>
+    	<div class="box">
+    		<input type="radio" name="q4" value="j" class="radio4">
+    		화려한 디자인
+    		<input type="radio" name="q4" value="k" class="radio4">
+    		심플한 디자인
+    	</div>
+    </section>
+    <section class="s5">
+    	<button id="but">나의 축구화는?!</button>
+    </section>
+    <div id="monitor">당신의 축구화는 입니다.</div>
+    <script type="text/javascript">
+    	but.onclick = function(){
+    		var t = document.getElementsByClassName("radio1");
+    		for(var i=0; i<3; i++){
+    			if(t[i].checked == true){
+    				if(i == 0){
+    					var q1Value = "a";
+    				}else if(i == 1){
+    					var q1Value = "b";
+    				}else if(i == 2){
+    					var q1Value = "c";
+    				}
+    			}
+    		}	
+    		var t = document.getElementsByClassName("radio2");
+    		for(var i=0; i<3; i++){
+    			if(t[i].checked == true){
+    				if(i == 0){
+    					var q2Value = "d";
+    				}else if(i == 1){
+    					var q2Value = "e";
+    				}else if(i == 2){
+    					var q2Value = "f";
+    				}
+    			}	
+    		}
+    		var t = document.getElementsByClassName("radio3");
+    		for(var i=0; i<3; i++){
+    			if(t[i].checked == true){
+    				if(i == 0){
+    					var q3Value = "g";
+    				}else if(i == 1){
+    					var q3Value = "h";
+    				}else if(i == 2){
+    					var q3Value = "i";
+    				}
+    			}	
+    		}
+    		var t = document.getElementsByClassName("radio4");
+    		for(var i=0; i<2; i++){
+    			if(t[i].checked == true){
+    				if(i == 0){
+    					var q4Value = "j";
+    				}else if(i == 1){
+    					var q4Value = "k";
+    				}
+    			}	
+    		}
+console.log(q1Value, q2Value, q3Value, q4Value);
+    		if( q1Value == "a" ){
+	if(q2Value == "d"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+
+				monitor.innerHTML = "당신의 축구화는"+"푸마 퓨처"+"입니다"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀베놈"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 프레데터"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터 블랙"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="팬텀 베놈"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀베놈 블랙"
+		}
+	}
+    }else if(q2Value == "e"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스X"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="머큐리얼"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="머큐리얼"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="머큐리얼"
+		}
+	}
+    }else if(q2Value == "f"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스X"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="머큐리얼"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="푸마 퓨처"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="푸마 원"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스X"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="머큐리얼"
+		}
+}
+}
+}else if(q1Value == "b"){
+	if(q2Value == "d"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀비전"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="푸마 원"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="팬텀 비전"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+	}
+    }else if(q2Value == "e"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀 비전"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="팬텀 비전"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="팬텀 비전"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+	}
+    }else if(q2Value == "f"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀 비전"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="푸마 퓨처"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="팬텀 비전"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+			}
+}
+}
+}else if(q1Value == "c"){
+	if(q2Value == "d"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="나이키 팬텀 비전"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="나이키 팬텀 비전"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 코파"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="나이키 티엠포"
+		}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="푸마 원"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="나이키 티엠포"
+		}
+	}
+    }else if(q2Value == "e"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀 비전"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="팬텀 비전"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+	    }else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="푸마 퓨처"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="아디다스 프레데터"
+		}
+	}
+    }else if(q2Value == "f"){
+		if(q3Value == "g"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 네메시스"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="팬텀 비전"
+		}
+		}else if(q3Value == "h"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 코파"
+			}else if(q4Value = "k"){
+			    monitor.innerHTML ="나이키 티엠포"
+			}
+		}else if(q3Value == "i"){
+			if(q4Value == "j"){
+				monitor.innerHTML ="아디다스 코파"
+		    }else if(q4Value = "k"){
+			    monitor.innerHTML ="나이키 티엠포"
+			}
+		}
+	}
+}}   
+    </script>
+</body>
+</html>
